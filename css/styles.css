@@ -168,6 +168,74 @@ h2 {
 }
 
 /* --------------------
+   FEATURED CAROUSEL
+-------------------- */
+.featured {
+  padding: 90px 0;
+}
+
+.carousel {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.carousel-slides {
+  flex: 1;
+}
+
+/* JavaScript adds active-slide to the one slide that should be visible. */
+.carousel-slide {
+  display: none;
+  grid-template-columns: 1fr 1fr;
+  background-color: var(--light-blue);
+}
+
+.carousel-slide.active-slide {
+  display: grid;
+}
+
+.carousel-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 280px;
+  color: var(--white);
+  font-family: Georgia, serif;
+  font-size: 24px;
+}
+
+.carousel-plate {
+  background-color: var(--dark-blue);
+}
+
+.carousel-planter {
+  background-color: var(--medium-blue);
+}
+
+.carousel-bowl {
+  background-color: var(--deep-blue);
+}
+
+.carousel-text {
+  padding: 35px;
+}
+
+.carousel-button {
+  width: 40px;
+  height: 40px;
+  border: none;
+  background-color: var(--dark-blue);
+  color: var(--white);
+  cursor: pointer;
+}
+
+.carousel-status {
+  text-align: center;
+  color: var(--medium-blue);
+}
+
+/* --------------------
    BUTTONS AND LINKS
 -------------------- */
 
@@ -241,6 +309,49 @@ h2 {
   margin-bottom: 0;
 }
 
+.show-all-button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.catalog-controls {
+  margin-bottom: 30px;
+}
+
+.catalog-controls label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.catalog-controls input {
+  width: 100%;
+  max-width: 400px;
+  padding: 12px;
+  border: 1px solid var(--medium-blue);
+}
+
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.filter-button {
+  padding: 8px 12px;
+  border: 1px solid var(--dark-blue);
+  background-color: var(--white);
+  color: var(--dark-blue);
+  cursor: pointer;
+}
+
+.selected-filter {
+  background-color: var(--dark-blue);
+  color: var(--white);
+}
+
 .product-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -249,6 +360,14 @@ h2 {
 
 .product-card {
   cursor: pointer;
+}
+
+.product-card[hidden] {
+  display: none;
+}
+
+.no-products {
+  font-weight: bold;
 }
 
 .product-image {
@@ -337,17 +456,34 @@ h2 {
   gap: 60px;
 }
 
-.email-form {
+.contact-form {
   display: flex;
-  align-self: center;
-  gap: 10px;
+  flex-direction: column;
+  gap: 8px;
 }
 
-.email-form input {
+.contact-form label {
+  font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
   width: 100%;
   padding: 14px;
   border: none;
   font-size: 14px;
+}
+
+.contact-form .button {
+  align-self: flex-start;
+}
+
+.form-message {
+  min-height: 24px;
+}
+
+.form-message.success-message {
+  color: #d3f4dc;
 }
 
 .site-footer {
@@ -375,6 +511,21 @@ h2 {
     display: none;
   }
 
+  /* JavaScript adds this class when the menu button is clicked. */
+  .site-nav.is-open {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 25px 5%;
+    background-color: var(--white);
+  }
+
   .menu-button {
     display: block;
   }
@@ -395,8 +546,17 @@ h2 {
   .intro-grid,
   .art-grid,
   .newsletter-content,
-  .product-grid {
+  .product-grid,
+  .carousel-slide {
     grid-template-columns: 1fr;
+  }
+
+  .carousel {
+    gap: 8px;
+  }
+
+  .carousel-text {
+    padding: 25px;
   }
 
   .intro-grid,
