@@ -8,7 +8,7 @@ My purpose for writing this software was to practice JavaScript syntax in a real
 
 The product carousel changes the featured product when the user selects the Previous or Next button. The catalog allows users to search for products and filter them by category. The contact form checks that the name, email, and message fields are completed before showing a response.
 
-[Software Demo Video](ADD-YOUR-YOUTUBE-LINK-HERE)
+[Software Demo Video](https://youtu.be/und-14ed778)
 
 # Development Environment
 
